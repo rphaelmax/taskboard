@@ -1,0 +1,83 @@
+/* reset */
+*, *:before, *:after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background: #f0f2f5;
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    color: #1a1a2e;
+}
+input, button, textarea, select { font: inherit; }
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background: #ffffff;
+    border-bottom: 2px solid #bfbfbf;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+
+#addTaskBtn {
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+#addTaskBtn:hover{
+    background: #e0e0e0;
+}
+#addTaskBtn:active{
+    transform: scale(0.97);
+}
+
+.board{
+    display: flex;
+    gap: 16px;
+    padding: 24px;
+    min-height: calc(100vh - 65px);
+    align-items: flex-start;
+}
+.column {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    flex: 1;
+    min-width: 240px;
+    border: 2px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+}
+.column.drag-over {
+    border-color: #bfbfbf;
+    background: #f5f3ff;
+}
+.column h2 {
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bfbfbf;
+}
+.column[data-status="todo"] h2  { 
+    color: #6366f1; 
+}
+.column[data-status="doing"] h2 { 
+    color: #f59e0b; 
+}
+.column[data-status="done"] h2  { 
+    color: #10b981; 
+}

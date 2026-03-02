@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📝 Taskboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>📝 Taskboard</h1>
+        <button id="addTaskBtn">Nova tarefa</button>
+    </header>
+
+    <main class="board">
+        <div class="column" data-status="todo">
+            <h2>A fazer</h2>
+            <div class="task-list"></div>
+        </div>
+        <div class="column" data-status="doing">
+            <h2>Em Progresso</h2>
+            <div class="task-list"></div>
+        </div>
+        <div class="column" data-status="done">
+            <h2>Concluído</h2>
+            <div class="task-list"></div>
+        </div>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
