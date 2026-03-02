@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>📝 Taskboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header>
@@ -28,6 +30,30 @@
         </div>
     </main>
 
+    <div id="taskModal" class="modal-overlay">
+        <div class="modal">
+            <h3 id="modalHeading">Nova tarefa</h3>
+            <input type="text" id="modalTitle" placeholder="Título da tarefa *" maxlength="80">
+            <textarea id="modalDesc" placeholder="Descrição (opcional)" rows="3"></textarea>
+            <div class="modal-actions">
+                <button id="modalCancel" class="btn-secondary">Cancelar</button>
+                <button id="modalSave" class="btn-primary">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="confirmModal" class="modal-overlay">
+        <div class="modal modal--sm">
+            <h3>Excluir tarefa?</h3>
+            <p class="confirm-text">Essa ação não pode ser desfeita.</p>
+            <div class="modal-actions">
+                <button id="confirmCancel" class="btn-secondary">Cancelar</button>
+                <button id="confirmDelete" class="btn-danger">Excluir</button>
+            </div>
+        </div>
+    </div>
+
     <script src="assets/js/app.js"></script>
 </body>
+
 </html>
