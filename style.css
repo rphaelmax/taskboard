@@ -15,6 +15,32 @@ body {
 }
 input, button, textarea, select { font: inherit; }
 
+#changeTheme {
+    background: #c7c6c6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    border-radius: 70%;
+    border: none;
+    cursor: pointer;
+
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+
+    width: 49px;
+    height: 49px;
+
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.25s ease;
+    z-index: 9999;
+}
+#changeTheme:hover {
+    transform: translateY(-4px) scale(1.06);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+}
+#changeTheme:active {
+    transform: translateY(-1px) scale(0.99);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 header {
     display: flex;
     align-items: center;
@@ -23,13 +49,28 @@ header {
     background: #ffffff;
     border-bottom: 2px solid #bfbfbf;
     position: sticky;
-    top: 0;
+    top: 0;     
     z-index: 10;
 }
 header h1 {
     font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: -0.5px;
+}
+header img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header-right {
+    display: flex;
+    align-items: center;
 }
 
 #addTaskBtn {
@@ -264,3 +305,10 @@ header h1 {
     transition: background 0.2s;
 }
 .btn-danger:hover { background: #dc2626; }
+
+.btn-edit {
+    height: 24px;
+}
+.btn-delete {
+    height: 24px;
+}
