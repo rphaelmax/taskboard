@@ -7,16 +7,42 @@ RESPONSIVIDADE */
 html { scroll-behavior: smooth; }
 body {
     font-family: 'Trebuchet MS', sans-serif;
-    background: #f0f2f5;
+    background: var(--bg-page);
     min-height: 100vh;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    color: #1a1a2e;
+    color: var(--text-primary);
 }
 input, button, textarea, select { font: inherit; }
 
+:root {
+    --bg-page:       #f0f2f5;
+    --bg-surface:    #ffffff;
+    --bg-task:       #fafafa;
+    --border:        #bfbfbf;
+    --border-light:  #e8e8f0;
+    --text-primary:  #1a1a2e;
+    --text-muted:    #6b7280;
+    --btn-hover:     #e0e0e0;
+    --input-border:  #e0e0e8;
+    --theme-btn-bg:  #c7c6c6;
+}
+
+body.dark-mode {
+    --bg-page:       #0f1117;
+    --bg-surface:    #1a1d27;
+    --bg-task:       #22263a;
+    --border:        #2e3349;
+    --border-light:  #2e3349;
+    --text-primary:  #e8eaf0;
+    --text-muted:    #8b90a0;
+    --btn-hover:     #2e3349;
+    --input-border:  #2e3349;
+    --theme-btn-bg:  #2e3349;
+}
+
 #changeTheme {
-    background: #c7c6c6;
+    background: var(--theme-btn-bg);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     border-radius: 70%;
     border: none;
@@ -46,8 +72,8 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 16px 24px;
-    background: #ffffff;
-    border-bottom: 2px solid #bfbfbf;
+    background: var(--bg-surface);
+    border-bottom: 2px solid var(--border);
     position: sticky;
     top: 0;     
     z-index: 10;
@@ -74,6 +100,9 @@ header img {
 }
 
 #addTaskBtn {
+    border: 1.5px solid var(--border);
+    background: none;
+    color: var(--text-primary);
     border-radius: 8px;
     padding: 8px 18px;
     font-weight: 600;
@@ -81,7 +110,7 @@ header img {
     transition: background 0.2s, transform 0.1s;
 }
 #addTaskBtn:hover{
-    background: #e0e0e0;
+    background: var(--btn-hover);
 }
 #addTaskBtn:active{
     transform: scale(0.97);
@@ -95,7 +124,7 @@ header img {
     align-items: flex-start;
 }
 .column {
-    background: white;
+    background: var(--bg-surface);
     border-radius: 12px;
     padding: 16px;
     flex: 1;
@@ -104,8 +133,8 @@ header img {
     transition: border-color 0.2s, background 0.2s;
 }
 .column.drag-over {
-    border-color: #bfbfbf;
-    background: #f5f3ff;
+    border-color: var(--border);
+    background: var(--bg-task);
 }
 .column h2 {
     font-size: 0.85rem;
@@ -114,7 +143,7 @@ header img {
     letter-spacing: 1px;
     margin-bottom: 14px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #bfbfbf;
+    border-bottom: 1px solid var(--border);
 }
 .column[data-status="todo"] h2  { 
     color: #4547b9; 
@@ -140,8 +169,8 @@ header img {
 }
 
 .task {
-    background: #fafafa;
-    border: 1px solid #e8e8f0;
+    background: var(--bg-task);
+    border: 1px solid var(--border-light);
     padding: 12px;
     margin-bottom: 10px;
     border-radius: 8px;
@@ -162,7 +191,7 @@ header img {
 
 .task-desc {
     font-size: 0.85rem;
-    color: #6b7280;
+    color: var(--text-muted);
     margin-top: 8px;
     overflow-wrap: break-word;
 }
@@ -187,7 +216,7 @@ header img {
 
 .task-actions button:hover {
     opacity: 1;
-    background: #f0f0f0;
+    background: var(--btn-hover);
 }
 
 .task.drag-target {
@@ -198,7 +227,7 @@ header img {
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -214,7 +243,8 @@ header img {
 }
 
 .modal {
-    background: white;
+    background: var(--bg-surface);
+    color: var(--text-primary);
     border-radius: 14px;
     padding: 28px;
     width: 100%;
@@ -237,7 +267,9 @@ header img {
 }
 
 .modal input, .modal textarea {
-    border: 1.5px solid #e0e0e8;
+    background: var(--bg-task);
+    color: var(--text-primary);
+    border: 1.5px solid var(--input-border);
     border-radius: 8px;
     padding: 10px 12px;
     width: 100%;
@@ -283,7 +315,8 @@ header img {
 
 .btn-secondary {
     background: none;
-    border: 1.5px solid #e0e0e8;
+    border: 1.5px solid var(--border);
+    color: var(--text-primary);
     border-radius: 8px;
     padding: 9px 20px;
     font-weight: 500;
@@ -291,7 +324,7 @@ header img {
     transition: background 0.2s;
 }
 .btn-secondary:hover { 
-    background: #f5f5f5; 
+    background: var(--btn-hover);
 }
 
 .btn-danger {

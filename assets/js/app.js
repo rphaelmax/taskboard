@@ -230,6 +230,19 @@ function saveModal() {
     closeModal();
 }
 
+const toggleBtn = document.getElementById("changeTheme");
+
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+}
+
+toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    toggleBtn.querySelector('img').src = isDark ? 'assets/sun.svg' : 'assets/moon.svg';
+});
+
 // INIT:
 function init() {
     document.getElementById('addTaskBtn').addEventListener('click', () => openModal());
